@@ -1,10 +1,10 @@
-# BLIP Image Captioning Fine-Tuning
+# BLIP Image Captioning Fine-Tuning for Telecom Site CCTV Imagery
 
-Fine-tuning [Salesforce's BLIP](https://github.com/salesforce/BLIP) (`blip-image-captioning-base`) model on a custom image–caption dataset to generate captions tailored to a specific domain, trained and run on Google Colab.
+Fine-tuning [Salesforce's BLIP](https://github.com/salesforce/BLIP) (`blip-image-captioning-base`) model on a custom dataset of **CCTV images from telecommunication sites**, enabling the model to generate accurate, domain-specific captions for this kind of surveillance footage. Trained and run on Google Colab.
 
 ## Overview
 
-This project fine-tunes the pretrained BLIP image captioning model using a custom dataset of images and their corresponding captions. The workflow covers the full pipeline:
+This project fine-tunes the pretrained BLIP image captioning model using a custom dataset of CCTV images captured at telecommunication sites, paired with corresponding captions. The goal is to adapt the general-purpose BLIP model to reliably describe scenes, equipment, and activity specific to telecom site surveillance footage (e.g., tower/site conditions, personnel presence, equipment status). The workflow covers the full pipeline:
 
 1. **Data preparation** – Extracts images from zipped archives and loads captions from a tab-separated text file.
 2. **Dataset splitting** – Splits the data into train/validation sets (90/10).
@@ -24,6 +24,10 @@ This project fine-tunes the pretrained BLIP image captioning model using a custo
 
 - **Base model:** `Salesforce/blip-image-captioning-base`
 - **Task:** Image captioning (conditional text generation from image input)
+
+## Dataset Domain
+
+The training images are CCTV footage/snapshots sourced from telecommunication sites (e.g., cell towers, equipment shelters, site perimeters). Captions describe the scenes as observed in this surveillance context, allowing the fine-tuned model to produce more relevant and accurate descriptions than the general-purpose base model when applied to similar telecom-site CCTV images.
 
 ## Dataset Format
 
